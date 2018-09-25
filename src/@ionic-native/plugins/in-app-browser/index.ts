@@ -158,6 +158,21 @@ export class InAppBrowserObject {
    * Injects JavaScript code into the InAppBrowser window.
    * @param script {Object} Details of the script to run, specifying either a file or code key.
    * @returns {Promise<any>}
+   * @usage
+   * ```typescript
+   * ...
+   *
+   *
+   * const browser = this.iab.create('https://ionicframework.com/');
+   *
+   * browser.on('loadstop').subscribe(() =>{
+   *   browser.executeScript({code: "(function() { \
+   *       alert('Page loaded')\
+   *     })()" 
+   *   });
+   * });
+   *
+   * ```
    */
   @CordovaInstance()
   executeScript(script: { file?: string; code?: string }): Promise<any> {
