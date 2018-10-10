@@ -804,7 +804,7 @@ export class File extends IonicNativePlugin {
   }
 
   /**
-   * Remove a directory at a given path.
+   * Remove a directory at a given path, if the folder exists and is empty. For non-empty folders use removeRecursively.
    *
    * @param {string} path The path to the directory
    * @param {string} dirName The directory name
